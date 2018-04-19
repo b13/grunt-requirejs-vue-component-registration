@@ -27,7 +27,7 @@ module.exports = function (grunt) {
                 baseName = path.basename(filename, ext),
                 dashFileName = baseName.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase(),
                 relPath = dest.replace(options.basePath, ''),
-                requirejsLoadingPath = options.requirejsPlugin + relPath + '/' + baseName;
+                requirejsLoadingPath = options.requirejsPlugin + (relPath.charAt(0) === "/" ? relPath.substr(1) : relPath) + '/' + baseName;
 
             componentRegistration.push(`
             Vue.component('${dashFileName}', function (resolve, reject) {
