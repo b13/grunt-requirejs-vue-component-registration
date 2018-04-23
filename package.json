@@ -1,7 +1,7 @@
 {
   "name": "grunt-requirejs-vue-component-registration",
   "description": "Create vue component config for async loading with requirejs",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://github.com/b13/grunt-requirejs-vue-component-registration",
   "author": {
     "name": "Daniel Sattler",
