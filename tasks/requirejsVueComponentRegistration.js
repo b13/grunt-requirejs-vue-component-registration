@@ -25,7 +25,8 @@ module.exports = function (grunt) {
                 dest = path.dirname(filename),
                 ext = path.extname(filename),
                 baseName = path.basename(filename, ext),
-                dashFileName = baseName.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase(),
+                firstBaseNameChar = path.basename(filename, ext).charAt(0).toLowerCase(),
+                dashFileName = firstBaseNameChar + baseName.slice(1).replace(/([A-Z])/g, '-$1').toLowerCase(),
                 relPath = dest.replace(options.basePath, ''),
                 requirejsLoadingPath = options.requirejsPlugin + (relPath.charAt(0) === "/" ? relPath.substr(1) : relPath) + '/' + baseName;
 
